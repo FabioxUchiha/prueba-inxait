@@ -1,8 +1,9 @@
 @extends('layout')
 @section('title', 'inicio')
 @section('content')
-aqui esta la pagina de publicidad
-
-<a href=" {{ route('contact.index') }} ">contacto</a>
-
+<h1 class="text-center">aqui esta la pagina de publicidad</h1>
+<br><br><br>
+<button class="btn btn-light btn-block bg-primary">
+	<a href=" {{ route('contact.index') }} " class="text-white">Resgistrate para ganar</a>
+</button>
 @endsection
