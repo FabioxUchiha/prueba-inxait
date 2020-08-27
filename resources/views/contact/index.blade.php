@@ -93,11 +93,11 @@
 				name="department" id="department">
 				{{-- <option value="">Selecciona un departamento</option> --}}
 				@foreach($departments->all() as $department)
-				<option value="{{ $department->id }}">{{ $department->id }}</option>
+				<option value="{{ $department->id }}">{{ $department->department }}</option>
 				@endforeach
 			</select><br>
 		</div>
-	<input id="servicioSelecionado" name="nom_Servicio" value="">
+	{{-- <input id="servicioSelecionado" name="nom_Servicio" value=""> --}}
 
 		<div class="form-group">
 			<label for="city">Ciudad:</label><br>
@@ -108,7 +108,7 @@
 				@endif
 			{{-- <option selected="false">Selecciona una ciudad o municipio</option> --}}
 			@foreach($cities->all() as $city)
-			<option value="{{ $city->department_id }}">{{ $city->department_id }}</option>
+			<option value="{{ $city->department_id }}">{{ $city->city }}</option>
 			@endforeach
 		</select><br>
 	</div>
