@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Exports\UsersExport;
 use App\City;
 use App\Department;
 use App\User;
@@ -69,6 +69,10 @@ class ContactController extends Controller
             'user' => $user,
             'aleatorio' => $aleatorio
         ]);
+    }
+
+    public function descargar(UsersExport $usersExport){
+        return $usersExport->download('users.xlsx');
     }
 
     /**

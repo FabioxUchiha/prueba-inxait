@@ -2,11 +2,13 @@
 
 namespace App\Exports;
 
-use App\\User;
+use App\User;
+use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class UsersExport implements FromCollection
 {
+	use Exportable;
     /**
     * @return \Illuminate\Support\Collection
     */

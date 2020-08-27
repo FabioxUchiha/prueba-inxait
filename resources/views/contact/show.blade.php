@@ -8,5 +8,10 @@
 	@else
 @endif
 <h1>{{ $user->count() }}</h1>
-<a href="{{ route('contact.index') }}">Formulario de registro</a>
+<button class="btn btn-light btn-block bg-primary">
+<a href="{{ route('contact.index') }}" class="text-white">Formulario de registro</a>
+</button>
+<button class="btn btn-light btn-block bg-primary">
+	<strong><a href="{{ route('contact.descargar') }}" class="text-white">descargar excel</a></strong>
+</button>
 @endsection
