@@ -64,10 +64,11 @@ class ContactController extends Controller
      */
     public function show(User $user)
     {
-        return User::count();
-        // return view('contact.show', [
-        //     'user' => $user
-        // ]);
+       $aleatorio = User::inRandomOrder()->get('name');
+        return view('contact.show', [
+            'user' => $user,
+            'aleatorio' => $aleatorio
+        ]);
     }
 
     /**
