@@ -22,16 +22,6 @@ class ContactController extends Controller
             ]);
     }
 
-    public function getCities(Request $request){
-        if ($request->ajax()) {
-            $cities =City::where('department_id', $request->department_id)->get();
-            foreach ($cities as $city) {
-                $cityArray[$city->id] = $city->city;
-            }
-            return response()->json($cityArray);
-        }
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -60,7 +50,6 @@ class ContactController extends Controller
             'city' => 'required',
             'check' => 'required'
         ]);
-
 
          User::create($fields);
 

@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->integer('cedula');
             $table->bigInteger('phone');
             $table->string('email')->unique();
-            $table->string('department_id');
-            $table->string('city_id');
+            $table->string('department');
+            $table->string('city');
             $table->boolean('check');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

@@ -4,15 +4,15 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12 col-sm-10 col-lg-6 mx-auto">
-			{{-- @if ($errors->any())
+			@if ($errors->any())
 			<ul>
 				@foreach ($errors->all() as $error)
 				<li> {{ $error }} </li>
 				@endforeach
 			</ul>
-			@endif --}}
+			@endif
 
-			<form class="bg-white shadow rounded py-3 px-4 was-validated"
+		<form class="bg-white shadow rounded py-3 px-4 was-validated"
 			action="{{ route('contact.store') }}" method="POST">
 			@csrf
 			<h1 class="display-4">Contacto</h1>
@@ -89,11 +89,11 @@
 
 			<div class="form-group">
 				<label for="department">Departamanto:</label><br>
-				<select class="form-control bg-light shadow dynamic" data-dependent="city"
+				<select class="form-control bg-light shadow dynamic"
 				name="department" id="department">
-				{{-- <option value="">Selecciona un departamento</option> --}}
+				<option value="">Selecciona un departamento</option>
 				@foreach($departments->all() as $department)
-				<option value="{{ $department->id }}">{{ $department->department }}</option>
+				<option value="{{ $department->department }}">{{ $department->department }}</option>
 				@endforeach
 			</select><br>
 		</div>
@@ -102,13 +102,10 @@
 		<div class="form-group">
 			<label for="city">Ciudad:</label><br>
 			<select class="form-control bg-light shadow"
-			name="city" id="servicioSelecionado" data-old="{{ old('department_id') }}">
-				@if($errors->has('department_id'))
-					<strong>{{ $errors->first('department_id') }}</strong>
-				@endif
-			{{-- <option selected="false">Selecciona una ciudad o municipio</option> --}}
+			name="city" id="servicioSelecionado">
+			<option selected="false">Selecciona una ciudad o municipio</option>
 			@foreach($cities->all() as $city)
-			<option value="{{ $city->department_id }}">{{ $city->city }}</option>
+			<option value="{{ $city->city }}">{{ $city->city }}</option>
 			@endforeach
 		</select><br>
 	</div>
@@ -126,16 +123,12 @@
 		acepta los terminos y condiciones
 	</div>
 	<button class="btn btn-primary">Enviar</button>
-	</form>
-	<button class="btn btn-outline-primary"><a href="{{ route('contact.show') }}">Ganador</a></button>
-	</div>
-	</div>
+</form>
+<a href="{{ route('contact.show') }}">Ganador</a>
+</div>
+</div>
 </div>
 @endsection
 @section('scripts')
-<script type="text/javascript">
-	$(document).on('change', '#department', function(event) {
-     $valor = $('#servicioSelecionado').val($("#department option:selected").text());
- });
-</script>
+
 @endsection
