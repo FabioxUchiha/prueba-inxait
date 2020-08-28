@@ -62,13 +62,9 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(User $users)
     {
-       $aleatorio = User::inRandomOrder()->get('name');
-        return view('contact.show', [
-            'user' => $user,
-            'aleatorio' => $aleatorio
-        ]);
+        return view('contact.show', ['users' => $users]);
     }
 
     public function descargar(UsersExport $usersExport){

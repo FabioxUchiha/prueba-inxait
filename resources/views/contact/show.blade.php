@@ -1,9 +1,13 @@
 @extends('layout')
 @section('title', 'participantes')
 @section('content')
-@if($user->count() < 6)
+@if($users->count() < 6)
 <h1>aun falta mas participantes para el sorteo</h1>
-{{ $user->name }}
+@foreach($users->all() as $user)
+<ul>
+	<li>{{ $user->name }}</li>
+</ul>
+@endforeach
 @else
 @endif
 <h1>{{ $user->count() }}</h1>
