@@ -4,13 +4,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12 col-sm-10 col-lg-6 mx-auto">
-			@if ($errors->any())
+			{{-- @if ($errors->any())
 			<ul>
 				@foreach ($errors->all() as $error)
 				<li> {{ $error }} </li>
 				@endforeach
 			</ul>
-			@endif
+			@endif --}}
 
 		<form class="bg-white shadow rounded py-3 px-4 was-validated"
 			action="{{ route('contact.store') }}" method="POST">
