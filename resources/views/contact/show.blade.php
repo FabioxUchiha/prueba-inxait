@@ -3,8 +3,7 @@
 @section('content')
 @if($user->count() < 6)
 <h1>aun falta mas participantes para el sorteo</h1>
-{{ $aleatorio }}
-
+{{ $user->name }}
 @else
 @endif
 <h1>{{ $user->count() }}</h1>
